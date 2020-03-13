@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2020-03-10" view-index="0" gantt-divider-location="598" resource-divider-location="300" version="2.8.10" locale="en_US">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd10" name="ID" width="74" order="0"/>
+        <field id="tpd3" name="Name" width="410" order="1"/>
+        <field id="tpd9" name="Predecessors" width="110" order="2"/>
+        <option id="color.recent"><![CDATA[#ff00cc]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="210" order="0"/>
+        <field id="1" name="Default role" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Start Unity Project w GitRepo" color="#8cb6ce" meeting="false" start="2020-03-12" duration="1" complete="0" thirdDate="2020-03-13" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Should Have Working Scenes with Folders for artwork]]></notes>
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+            <depend id="10" type="2" difference="0" hardness="Strong"/>
+            <depend id="16" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="16" name="BuildSampleLevel1WithWorkingPlayer Controller" color="#8cb6ce" meeting="false" start="2020-03-13" duration="1" complete="0" thirdDate="2020-03-10" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Video from Brackeys will help
+]]></notes>
+        </task>
+        <task id="2" name="FindArtWork&amp;UploadToUnity" color="#8cb6ce" meeting="false" start="2020-03-13" duration="7" complete="0" thirdDate="2020-03-13" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Load into the appropriate folder in the project]]></notes>
+            <depend id="19" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="10" name="CreateSketchesOfEachLevel&amp;SelectItems/Baddies" color="#8cb6ce" meeting="false" start="2020-03-13" duration="7" complete="0" thirdDate="2020-03-11" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Make sure to work with art work that is avaliable
+]]></notes>
+        </task>
+        <task id="19" name="CreateStartMenu" meeting="false" start="2020-03-24" duration="1" complete="0" expand="true">
+            <depend id="20" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="20" name="CreateHomeMenu" meeting="false" start="2020-03-25" duration="1" complete="0" expand="true">
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="21" name="CreateLevel1" meeting="false" start="2020-03-26" duration="1" complete="0" expand="true">
+            <depend id="26" type="2" difference="0" hardness="Strong"/>
+            <depend id="27" type="2" difference="0" hardness="Strong"/>
+            <depend id="28" type="2" difference="0" hardness="Strong"/>
+            <depend id="29" type="2" difference="0" hardness="Strong"/>
+            <depend id="30" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="26" name="CreateLevel2" meeting="false" start="2020-03-27" duration="1" complete="0" expand="true"/>
+        <task id="27" name="CreateLevel3" meeting="false" start="2020-03-27" duration="1" complete="0" expand="true"/>
+        <task id="28" name="CreateLevel4" meeting="false" start="2020-03-27" duration="1" complete="0" expand="true"/>
+        <task id="29" name="CreateLevel5" meeting="false" start="2020-03-27" duration="1" complete="0" expand="true"/>
+        <task id="30" name="CreateEndScreen" meeting="false" start="2020-03-27" duration="1" complete="0" expand="true">
+            <depend id="31" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="31" name="LoadGameToOnlinePlatform" color="#8cb6ce" meeting="false" start="2020-03-30" duration="3" complete="0" thirdDate="2020-03-10" thirdDate-constraint="0" expand="true">
+            <notes><![CDATA[Scheduled 3 days because some research is needed]]></notes>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
