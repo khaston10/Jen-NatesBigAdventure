@@ -53,6 +53,7 @@ public class HomeMenu : MonoBehaviour
 
         // Set Music Volume.
         mainMusic.volume = musicLevel;
+        musicSlider.value = musicLevel;
 
     }
 
@@ -87,27 +88,46 @@ public class HomeMenu : MonoBehaviour
 
     public void Hover1()
     {
-        LevelInforText.text = "First Date";
+        LevelInforText.text = "First Date: The Picnic";
+    }
+
+    public void Click1()
+    {
+        //SaveData();
+        SceneManager.LoadScene(sceneBuildIndex: 2);
     }
 
     public void Hover2()
     {
-        LevelInforText.text = "TBA";
+        LevelInforText.text = "Second Date: Home Movie Night";
+    }
+
+    public void Click2()
+    {
+        //SaveData();
+        SceneManager.LoadScene(sceneBuildIndex: 3);
     }
 
     public void Hover3()
     {
-        LevelInforText.text = "Proposal";
+        LevelInforText.text = "A Beach Proposal";
+    }
+
+    public void Click3()
+    {
+        //SaveData();
+        SceneManager.LoadScene(sceneBuildIndex: 4);
     }
 
     public void Hover4()
     {
-        LevelInforText.text = "Wedding";
+        LevelInforText.text = "The Wedding";
+        SceneManager.LoadScene(sceneBuildIndex: 5);
     }
 
     public void Hover5()
     {
-        LevelInforText.text = "HoneyMoon";
+        LevelInforText.text = "The HoneyMoon";
     }
 
 

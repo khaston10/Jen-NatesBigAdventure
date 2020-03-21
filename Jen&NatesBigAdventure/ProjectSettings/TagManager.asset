@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlatformHard
+  - PlatformSoft
+  - NateObject
+  - JenObject
+  - NatePortal
+  - JenPortal
+  - PlayerJen
   layers:
   - Default
   - TransparentFX
@@ -13,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - PlayerNate
+  - PlayerJen
+  - PlatformSoft
   - 
   - 
   - 
@@ -40,4 +47,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 1900264571
+    locked: 0
+  - name: MidGround
+    uniqueID: 992747765
+    locked: 0
+  - name: Foreground
+    uniqueID: 492018643
     locked: 0
