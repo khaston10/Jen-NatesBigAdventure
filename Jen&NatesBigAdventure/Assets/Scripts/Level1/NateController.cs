@@ -15,7 +15,8 @@ public class NateController : MonoBehaviour
     public float jumpSpeed;
     public float timeBetweenJumps;
     public bool hasLanded;
-    
+    public AudioSource jump;
+
     float jumpCounter;
 
     #endregion
@@ -73,6 +74,7 @@ public class NateController : MonoBehaviour
 
         if (isJumping)
         {
+            jump.Play();
             anim.Play("Jump");
             rigidbody2d.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             isJumping = false;

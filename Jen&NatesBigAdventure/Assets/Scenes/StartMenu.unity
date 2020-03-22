@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicLevel: 1
   activeStars: 000000000000000000000000000000
-  activeLevels: 0100000000
+  activeLevels: 0101010101
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

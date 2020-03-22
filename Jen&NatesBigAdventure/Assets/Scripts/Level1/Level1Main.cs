@@ -21,6 +21,7 @@ public class Level1Main : MonoBehaviour
     public bool nateOnPortal;
     public bool jenOnPortal;
     public AudioSource mainMusic;
+    public AudioSource portal;
 
     #region StarImages
     public Image[] stars;
@@ -31,6 +32,7 @@ public class Level1Main : MonoBehaviour
     float threeStarTime = 10;
     float twoStarTime = 20;
     float oneStarTime = 30;
+    bool levelEnded;
 
 
     #endregion
@@ -77,7 +79,7 @@ public class Level1Main : MonoBehaviour
         }
 
         // If players are on portals and items have been collected then the user will go back to home screen.
-        if (nateOnPortal && jenOnPortal)
+        if (nateOnPortal && jenOnPortal && levelEnded == false)
         {
             // Check to see how many stars should be awarded.
             if (gameTimer < threeStarTime)
@@ -93,16 +95,22 @@ public class Level1Main : MonoBehaviour
                 activeStars[1] = true;
             }
 
-            else activeStars[0] = true;
+            else if (gameTimer < oneStarTime)
+            {
+                activeStars[0] = true;
+            }
+
+            
 
             activeLevels[1] = true;
 
-            // Save Data and load home screen.
-            SaveData();
-            SceneManager.LoadScene(sceneBuildIndex: 1);
+            levelEnded = true;
+
+            StartCoroutine(WaitForSoundAtEnd());
+
         }
 
-        
+
 
 
     }
@@ -120,4 +128,17 @@ public class Level1Main : MonoBehaviour
         mainMusic.volume = musicLevel;
 
     }
+
+    IEnumerator WaitForSoundAtEnd()
+    {
+        // Save Data and load home screen.
+        SaveData();
+        portal.Play();
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene(sceneBuildIndex: 1);
+    }
 }
+
+  

@@ -31,6 +31,7 @@ public class WallSwitch : MonoBehaviour
             if(levelNumber == 2) GameObject.Find("Canvas").GetComponent<Level2Main>().ActivateWall(switchNumber);
             else if(levelNumber == 3) GameObject.Find("Canvas").GetComponent<Level3Main>().ActivateWall(switchNumber);
             else if (levelNumber == 4) GameObject.Find("Canvas").GetComponent<Level4Main>().ActivateWall(switchNumber);
+            else if (levelNumber == 5) GameObject.Find("Canvas").GetComponent<Level5Main>().ActivateWall(switchNumber);
 
         }
     }
@@ -44,6 +45,7 @@ public class WallSwitch : MonoBehaviour
             if (levelNumber == 2) GameObject.Find("Canvas").GetComponent<Level2Main>().DeActiveWall(switchNumber);
             else if(levelNumber == 3) GameObject.Find("Canvas").GetComponent<Level3Main>().DeActiveWall(switchNumber);
             else if (levelNumber == 4) GameObject.Find("Canvas").GetComponent<Level4Main>().DeActiveWall(switchNumber);
+            else if (levelNumber == 5) GameObject.Find("Canvas").GetComponent<Level5Main>().DeActiveWall(switchNumber);
 
         }
     }

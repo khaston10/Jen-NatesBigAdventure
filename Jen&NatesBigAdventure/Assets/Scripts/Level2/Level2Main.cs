@@ -22,6 +22,7 @@ public class Level2Main : MonoBehaviour
     public bool nateOnPortal;
     public bool jenOnPortal;
     public AudioSource mainMusic;
+    public AudioSource portal;
 
     #region StarImages
     public Image[] stars;
@@ -29,9 +30,10 @@ public class Level2Main : MonoBehaviour
     public Text LevelInforText;
 
     float gameTimer;
-    float threeStarTime = 10;
-    float twoStarTime = 20;
-    float oneStarTime = 30;
+    float threeStarTime = 25;
+    float twoStarTime = 30;
+    float oneStarTime = 40;
+    bool levelEnded;
 
     // Variables for moving walls and switches.
     public GameObject[] walls;
@@ -83,7 +85,7 @@ public class Level2Main : MonoBehaviour
         }
 
         // If players are on portals and items have been collected then the user will go back to home screen.
-        if (nateOnPortal && jenOnPortal)
+        if (nateOnPortal && jenOnPortal && levelEnded == false)
         {
             // Check to see how many stars should be awarded.
             if (gameTimer < threeStarTime)
@@ -99,13 +101,16 @@ public class Level2Main : MonoBehaviour
                 activeStars[4] = true;
             }
 
-            else activeStars[3] = true;
+            else if (gameTimer < oneStarTime)
+            {
+                activeStars[3] = true;
+            }
 
             activeLevels[2] = true;
 
-            // Save Data and load home screen.
-            SaveData();
-            SceneManager.LoadScene(sceneBuildIndex: 1);
+            levelEnded = true;
+
+            StartCoroutine(WaitForSoundAtEnd());
         }
 
 
@@ -135,5 +140,16 @@ public class Level2Main : MonoBehaviour
     public void DeActiveWall(int wallNumber)
     {
         walls[wallNumber].GetComponentInChildren<MovingWallCont>().locked = true;
+    }
+
+    IEnumerator WaitForSoundAtEnd()
+    {
+        // Save Data and load home screen.
+        SaveData();
+        portal.Play();
+
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene(sceneBuildIndex: 1);
     }
 }

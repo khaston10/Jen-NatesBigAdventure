@@ -15,6 +15,7 @@ public class JenController : MonoBehaviour
     public float jumpSpeed;
     public float timeBetweenJumps;
     public bool hasLanded;
+    public AudioSource jump;
 
     float jumpCounter;
 
@@ -75,6 +76,7 @@ public class JenController : MonoBehaviour
         if (isJumping)
         {
             anim.Play("Jump");
+            jump.Play();
             rigidbody2d.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
             isJumping = false;
             hasLanded = false;

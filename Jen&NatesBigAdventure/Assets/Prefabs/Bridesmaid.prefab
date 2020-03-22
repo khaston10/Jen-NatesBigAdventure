@@ -78,6 +78,8 @@ MonoBehaviour:
     type: 3}
   collider2D: {fileID: 2628187525576348227}
   speed: 1
+  level: 0
+  explode: {fileID: 5691978990811646396, guid: 07df218bf39c2304dac2656144a97123, type: 3}
 --- !u!1 &2628187525826137405
 GameObject:
   m_ObjectHideFlags: 0

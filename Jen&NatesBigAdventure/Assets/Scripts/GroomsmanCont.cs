@@ -18,6 +18,8 @@ public class GroomsmanCont : MonoBehaviour
     public GameObject explosion;
     public BoxCollider2D collider2D;
     public float speed;
+    public int level;
+    public AudioSource explode;
 
     Animator anim;
     GameObject t;
@@ -83,6 +85,7 @@ public class GroomsmanCont : MonoBehaviour
 
     public void CreateExplosion()
     {
+        explode.Play();
         t = Instantiate(explosion);
         t.transform.localPosition = transform.position;
 
@@ -94,18 +97,21 @@ public class GroomsmanCont : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
 
         // Return to Home Screen.
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        SceneManager.LoadScene(sceneBuildIndex: level);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "PlayerJen")
         {
             // Turn the collider off so that only one explosion plays.
             collider2D.enabled = false;
 
             // Play explosion animation
             CreateExplosion();
+
+            // Destory Player
+            Destroy(collision.gameObject);
 
             // Wait the duration of the animation.
             StartCoroutine("WaitForAnimation");

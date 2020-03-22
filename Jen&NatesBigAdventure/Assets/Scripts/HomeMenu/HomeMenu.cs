@@ -18,6 +18,10 @@ public class HomeMenu : MonoBehaviour
     public Image[] stars;
     public Image[] levels;
     public Text LevelInforText;
+    public Text GoldTimeText;
+    public Text SilverTimeText;
+    public Text BronzeTimeText;
+    public Button credits;
     #endregion
 
     public AudioSource mainMusic;
@@ -55,6 +59,17 @@ public class HomeMenu : MonoBehaviour
         mainMusic.volume = musicLevel;
         musicSlider.value = musicLevel;
 
+        // Check to see if credit button should be active.
+        credits.gameObject.SetActive(true);
+
+        for (int i = 0; i < activeLevels.Length; i++)
+        {
+            if (activeLevels[i] == false)
+            {
+                credits.gameObject.SetActive(false);
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -81,14 +96,42 @@ public class HomeMenu : MonoBehaviour
 
     }
 
+    public void Back()
+    {
+        SaveData();
+        SceneManager.LoadScene(sceneBuildIndex: 0);
+    }
+
+    public void HoverB()
+    {
+        LevelInforText.text = "Back to START SCREEN";
+    }
+
+    public void Credits()
+    {
+        SaveData();
+        SceneManager.LoadScene(sceneBuildIndex: 7);
+    }
+
+    public void HoverC()
+    {
+        LevelInforText.text = "CREDITS";
+    }
+
     public void HoverExit()
     {
         LevelInforText.text = "";
+        GoldTimeText.text = "";
+        SilverTimeText.text = "";
+        BronzeTimeText.text = "";
     }
 
     public void Hover1()
     {
         LevelInforText.text = "First Date: The Picnic";
+        GoldTimeText.text = "10";
+        SilverTimeText.text = "20";
+        BronzeTimeText.text = "30";
     }
 
     public void Click1()
@@ -100,6 +143,9 @@ public class HomeMenu : MonoBehaviour
     public void Hover2()
     {
         LevelInforText.text = "Second Date: Home Movie Night";
+        GoldTimeText.text = "25";
+        SilverTimeText.text = "30";
+        BronzeTimeText.text = "40";
     }
 
     public void Click2()
@@ -111,6 +157,9 @@ public class HomeMenu : MonoBehaviour
     public void Hover3()
     {
         LevelInforText.text = "A Beach Proposal";
+        GoldTimeText.text = "30";
+        SilverTimeText.text = "40";
+        BronzeTimeText.text = "50";
     }
 
     public void Click3()
@@ -122,12 +171,28 @@ public class HomeMenu : MonoBehaviour
     public void Hover4()
     {
         LevelInforText.text = "The Wedding";
+        
+        GoldTimeText.text = "60";
+        SilverTimeText.text = "80";
+        BronzeTimeText.text = "100";
+    }
+
+    public void Click4()
+    {
         SceneManager.LoadScene(sceneBuildIndex: 5);
     }
 
     public void Hover5()
     {
-        LevelInforText.text = "The HoneyMoon";
+        LevelInforText.text = "The HoneyMoon: Love Shack";
+        GoldTimeText.text = "60";
+        SilverTimeText.text = "80";
+        BronzeTimeText.text = "100";
+    }
+
+    public void Click5()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 6);
     }
 
 
